@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+<div id="test"></div>
+<script>
+let req = new XMLHttpRequest();
+
+
+req.open("GET","https://stocktwits.gorwellconsulting.com/my_stupid?key2=5&key3=awesome&brown=sweet&bobby=pizza");
+req.onreadystatechange = function(){
+	if (this.readyState == 4 && this.status == 200){
+		let testText = req.responseText;
+		document.getElementById("test").innerHTML = req.testText.body;
+	}else{
+		console.info(this.status + " sucks!");
+		}
+}
+req.setRequestHeader("Access-Control-Allow-Origin","*");
+
+req.setRequestHeader("Content-Type","application/json");
+
+
+
+req.setRequestHeader("x-api-key","XqzcQD9o8983JEFhNwJnKaG5WATmAr2V6QlERMIf");
+req.send();
+	
+</script>
+
+</body>
+
+</html>
